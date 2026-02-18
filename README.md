@@ -57,3 +57,7 @@ generative-agents \
 - `EmbeddingClient` batches embedding requests with retry logic (default model `nomic-embed-text`).
 - Prompt templates are standardized for perception, poignancy, reflection, planning, and dialogue flows.
 - Context budgeting helpers can trim retrieved context to an approximate token budget (default 16k).
+
+- New `environment/` package includes a 2D world model (locations, objects, agent positions, and schedules) plus a Pillow tile renderer with viewport capture support.
+- `VisualPerceptionService` captures viewport images at `data/images/{agent_id}/{timestamp}.png` and stores references in `Memory.visual_context`.
+- Vision inference is cached with change detection and periodic "glance" ticks so qwen3-vl runs only when scenes significantly change or a glance interval elapses.
