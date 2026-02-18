@@ -10,6 +10,7 @@ from rich.console import Console
 from rich.table import Table
 
 from .config import AgentConfig, EMBED_MODEL, MODEL_NAME
+from .llm_client import ensure_model_available
 
 console = Console()
 
@@ -117,6 +118,7 @@ def main() -> None:
         model_name=args.model_name,
         embed_model=args.embed_model,
     )
+    asyncio.run(ensure_model_available(args.model_name))
     show_runtime_summary(args, config)
     asyncio.run(run_ticks(args))
 
