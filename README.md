@@ -49,3 +49,11 @@ generative-agents \
   --chroma-path ./runtime_data/chroma \
   --ticks 20
 ```
+
+## Runtime safeguards and utilities
+
+- Startup now performs a model health check to verify the configured generation model is available in Ollama.
+- `LLMClient` provides async text generation, vision generation, and 1-10 memory importance scoring.
+- `EmbeddingClient` batches embedding requests with retry logic (default model `nomic-embed-text`).
+- Prompt templates are standardized for perception, poignancy, reflection, planning, and dialogue flows.
+- Context budgeting helpers can trim retrieved context to an approximate token budget (default 16k).

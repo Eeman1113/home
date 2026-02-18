@@ -5,7 +5,7 @@ from dataclasses import dataclass
 MODEL_NAME = "qwen3-vl:latest"
 EMBED_MODEL = "nomic-embed-text"
 RETRIEVAL_DECAY_FACTOR = 0.985
-MAX_CONTEXT_TOKENS = 8192
+MAX_CONTEXT_TOKENS = 16000
 MAX_GENERATION_TOKENS = 1024
 
 
